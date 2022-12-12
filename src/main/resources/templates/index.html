@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org">
+-<head>
+<meta UTF-8>
+<title> </title>
+</head>
+-<body>
+
+<div>
+<a th:href="@{/guardar}">Nuevo</a>
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>NOMBRES</th>
+<th>APELLIDO</th>
+<th>ACCIONES</th>
+
+</tr>
+</thead>
+<tbody>
+<tr th:each="alumnos:${alumnos}">
+<td th:text="${alumnos.id}"></td>
+<td th:text="${alumnos.name}"></td>
+<td th:text="${alumnos.apellido}"></td>
+<td>
+<a th:href="@{/editar/}+${alumnos.id}">Editar</a>
+<a th:href="@{/eliminar/}+${alumnos.id}">Eliminar</a>
+
+</td>
+</tr>
+</tbody>
+
+</table>
+
+<table>
+<thead>
+<tr>
+<th>ID MATERIA</th>
+<th>MATERIA</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="materias:${materias}">
+<td th:text="${materias.id}"></td>
+<td th:text="${materias.descripcion}"></td>
+
+
+
+</tbody>
+
+
+</table>
+
+</div>
+</body>
+</html>

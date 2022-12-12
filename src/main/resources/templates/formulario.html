@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org">
+-<head>
+<meta UTF-8>
+<title> </title>
+</head>
+-<body>
+
+<div>
+	<div> 
+
+<form th:action="@{/guardar}" th:object=${alumno} method="POST">
+<div>
+
+		<div>
+		<h3>Modulo Alumno</h3>
+		
+		</div>
+		<div>
+			<div>
+			<label>ID</label>
+			<input th:field="*{id}" type="text">
+			
+			</div>
+			
+			<div>
+			<label>NOMBRES</label>
+			<input th:field="*{name}" type="text">
+			
+			</div>
+			
+			<div>
+			<label>APELLIDOS</label>
+			<input th:field="*{Apellido}" type="text">
+			
+			</div>
+		</div>
+		<div>
+		<input type="submit" value="Guardar">
+		
+		</div>
+
+
+
+</div>
+</form>
+
+	</div>
+
+
+</div>
+
+</body>
+</html>
