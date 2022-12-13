@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.springcrud.boot.web.app.interfaceService.IalumnaService;
+import com.springcrud.boot.web.app.interfaceService.ImateriaService;
 import com.springcrud.boot.web.app.modelo.Alumno;
+import com.springcrud.boot.web.app.modelo.Materias;
 
 
 @Controller
@@ -22,13 +24,24 @@ public class Controlador {
 	
 	@Autowired
 	private IalumnaService service;
-
+	@Autowired
+	private ImateriaService services;
+	
 	
 	
 	@GetMapping("/listar")
 	public String listar (Model model) {
 		List<Alumno>alumnos= service.listar();
 		model.addAttribute("alumnos", alumnos);
+		
+		return "index";
+	}
+	
+	
+	@GetMapping("/listarm")
+	public String listarf (Model model) {
+		List<Materias>materias= services.listarf();
+		model.addAttribute("materias", materias);
 		
 		return "index";
 	}
